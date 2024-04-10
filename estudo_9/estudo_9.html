@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculando a velocidade</title>
+    <style>
+        body{
+
+            font: normal 15px Arial;
+        }
+
+        div#central{
+            width: 450px;
+            text-align: center;
+            background-color: rgba(112, 112, 112, 0.452);
+            display: block;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.213);
+        }
+
+        div#central div#res{
+ 
+            color: green;
+            text-decoration:underline;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="central">
+        <h1>sistema de multas</h1>
+          <strong>velocidade do carro:</strong>  <input type="number" name="txtvel" id="txtvel"> KM/h
+        
+        <input type="button" value="verificar" onclick="verificar()">
+        
+        <div id="res"></div>
+    </div>
+<script>
+
+function verificar(){ //função para pegar os dados e verificar a velocidade
+    var calculo= window.document.querySelector('div#res')
+    var txtv= window.document.querySelector('input#txtvel')
+    
+    vel = Number(txtv.value)
+  res.innerHTML = `velocidade do carro é  <strong>${vel}KM/h</strong>`
+
+  if(vel > 60){
+   res.innerHTML += '  nesta velocidade voce irá ser multado!'
+  }
+else{
+
+    res.innerHTML+= '  dirija sempre com cinto de segurança!'
+}
+}
+</script>
+</body>
+</html>

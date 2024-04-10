@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar país</title>
+    <style>
+        body{
+
+            font: normal 15px Arial;
+        }
+
+        div#main{
+            width: 450px;
+            text-align: center;
+            background-color: rgba(112, 112, 112, 0.452);
+            display: block;
+            margin: auto;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.213);
+        }
+
+        div#main div#verificado{
+ 
+            color: green;
+            text-decoration:underline;
+            padding: 10px;
+        }
+        
+        div#noturno{
+
+         background-color: rgba(0, 0, 0, 0.506);
+         color: white;
+         width: 100px;
+         text-align: center;
+         border-radius: 5px;
+         padding: 10px;
+         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.213);
+         cursor: pointer;
+        }
+        
+
+    </style>
+</head>
+<body id="body">
+    <div id="main">  
+
+<h1>verificar país</h1>
+digite seu país: <input type="text" name="txtp" id="txtp">
+<input type="button" value="verificar" onclick="analise()">
+<div id="verificado"></div>
+
+    </div>
+
+
+    <div id="noturno" onclick="alternarModo()">Modo noturno</div>
+
+    <script>
+
+function analise(){
+var txtp = window.document.querySelector('input#txtp')
+var verificado= window.document.querySelector('div#verificado')
+var pais = txtp.value
+if(pais == 'Brasil'){
+
+    verificado.innerHTML=`voce é do <strong>${pais}</strong>! bem vindo a seu país!`
+}
+
+else{
+
+    verificado.innerHTML=`voce é do/a<strong> ${pais}</strong>! seja bem vindo/a ao Brasil!`
+}
+}
+
+        var body = window.document.querySelector('body');
+        var main = window.document.querySelector('div#main');
+        var noturnoButton = window.document.querySelector('div#noturno');
+        var modoEscuro = false;
+
+           
+   
+        
+        function alternarModo() {
+            if (modoEscuro) {
+                body.style.background = 'white';
+                main.style.color = 'black';
+                noturnoButton.innerHTML = 'Modo noturno';
+               
+                
+            } else {
+                body.style.background = 'black';
+                main.style.color = 'white';
+                noturnoButton.innerHTML = 'Modo claro';
+                
+            }
+            modoEscuro = !modoEscuro; // Inverte o modo
+        }
+    </script>
+</body>
+</html>
