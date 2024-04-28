@@ -34,10 +34,14 @@ var numeros = [];
             res.innerHTML = ''
         }
       
+        function organizar(){
+           return numeros.sort();
         
+        
+        }
         
    function finalizar(){
-        let organizar = numeros.sort();
+        organizar()
 
    if(numeros.length === 0){
 
@@ -72,4 +76,13 @@ var numeros = [];
     
     }
        
+    }
+
+    function resetar(){
+
+
+     res.innerHTML = ''
+
+     select.innerHTML = ''
+     numeros = []
     }
