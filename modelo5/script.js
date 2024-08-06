@@ -32,8 +32,8 @@ var numeros = [];
             option.text = `O número ${valor} foi adicionado`;
             select.add(option);
             res.innerHTML = ''
-            valor.value=''
-            valor.focus()
+            document.getElementById("txtn").value = "";
+            document.getElementById("txtn").focus();
         }
       
         function organizar(){
@@ -91,10 +91,4 @@ var numeros = [];
 
 
 
-    valor.addEventListener('keyup', function(e){
-        var key = e.which || e.keyCode;
-        if (key == 13) { // codigo da tecla enter
-          // colocas aqui a tua função a rodar ///// Ao pressionar botão enter, acionar função adicionar()
-          verificarNumero(numero)
-        }
-      });
+    
